@@ -1,0 +1,18 @@
+---
+id: 0
+name: Mainnet deployment
+network: mainnet
+stacks-node: "https://api.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoin.blockstack.com:8332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: proof-tip
+            expected-sender: SP33S3T4B78TTTVNZW687YY6KTN7SYNA79P7AH438
+            cost: 61740
+            path: contracts/proof-tip.clar
+            anchor-block-only: true
+            clarity-version: 4
+      epoch: "3.3"
