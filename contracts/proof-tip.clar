@@ -129,3 +129,7 @@
 
 ;; Withdraw accumulated fees
 (define-public (withdraw-fees (amount uint))
+    (let
+        (
+            (current-fees (var-get platform-fees))
+        )
