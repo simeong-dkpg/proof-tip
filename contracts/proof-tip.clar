@@ -137,3 +137,4 @@
         (asserts! (>= current-fees amount) err-insufficient-fees)
 
         (try! (stx-transfer? amount tx-sender contract-owner))
+        (var-set platform-fees (- current-fees amount))
