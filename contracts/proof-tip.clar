@@ -36,3 +36,5 @@
 
 (define-map proof-ledger
     { proof-id: uint }
+    {
+        sender: principal,
