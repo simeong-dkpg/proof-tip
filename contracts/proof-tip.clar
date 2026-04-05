@@ -57,3 +57,10 @@
 (define-private (calculate-fee (amount uint))
     (/ (* amount fee-basis-points) basis-points-divisor)
 )
+
+;; ---------------------------------------------------------
+;; Public Functions
+;; ---------------------------------------------------------
+
+;; submit-proof-tip
+(define-public (submit-proof-tip (recipient principal) (amount uint) (message (string-utf8 280)))
