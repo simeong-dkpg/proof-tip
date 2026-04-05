@@ -169,3 +169,6 @@
         total-supporters: (default-to u0 (map-get? user-received-count creator))
     }
 )
+
+;; Platform stats
+(define-read-only (get-proof-stats)
