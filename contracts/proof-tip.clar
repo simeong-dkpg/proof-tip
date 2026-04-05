@@ -126,3 +126,6 @@
         (ok proof-id)
     )
 )
+
+;; Withdraw accumulated fees
+(define-public (withdraw-fees (amount uint))
