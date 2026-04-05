@@ -28,3 +28,4 @@
 
 (define-data-var total-proofs uint u0)
 (define-data-var total-volume uint u0)
+(define-data-var platform-fees uint u0)
