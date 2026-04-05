@@ -178,3 +178,6 @@
         platform-fees: (var-get platform-fees)
     }
 )
+
+;; User totals
+(define-read-only (get-user-sent-total (user principal))
