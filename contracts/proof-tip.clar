@@ -172,3 +172,5 @@
 
 ;; Platform stats
 (define-read-only (get-proof-stats)
+    {
+        total-proofs: (var-get total-proofs),
