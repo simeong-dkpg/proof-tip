@@ -68,3 +68,4 @@
         (
             (proof-id (var-get total-proofs))
             (fee (calculate-fee amount))
+            (is-owner (is-eq tx-sender contract-owner))
