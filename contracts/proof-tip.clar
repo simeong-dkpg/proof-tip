@@ -109,3 +109,4 @@
 
         ;; Update global stats
         (var-set total-proofs (+ proof-id u1))
+        (var-set total-volume (+ (var-get total-volume) amount))
