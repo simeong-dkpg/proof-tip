@@ -88,3 +88,6 @@
             true
             (try! (stx-transfer? fee tx-sender contract-owner))
         )
+
+        ;; Record proof
+        (map-set proof-ledger
