@@ -133,3 +133,4 @@
         (
             (current-fees (var-get platform-fees))
         )
+        (asserts! (is-eq tx-sender contract-owner) err-owner-only)
