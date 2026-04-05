@@ -38,3 +38,4 @@
     { proof-id: uint }
     {
         sender: principal,
+        recipient: principal,
