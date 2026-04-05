@@ -122,3 +122,7 @@
             fee: fee,
             message: message
         })
+
+        (ok proof-id)
+    )
+)
