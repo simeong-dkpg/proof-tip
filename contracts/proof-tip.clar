@@ -44,3 +44,5 @@
         tip-height: uint
     }
 )
+
+(define-map user-tip-count principal uint)
