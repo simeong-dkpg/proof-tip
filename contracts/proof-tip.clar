@@ -21,3 +21,9 @@
 
 (define-constant fee-basis-points u50) ;; 0.5%
 (define-constant basis-points-divisor u10000)
+
+;; ---------------------------------------------------------
+;; Global State
+;; ---------------------------------------------------------
+
+(define-data-var total-proofs uint u0)
