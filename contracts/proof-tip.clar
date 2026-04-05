@@ -94,3 +94,4 @@
             { proof-id: proof-id }
             {
                 sender: tx-sender,
+                recipient: recipient,
