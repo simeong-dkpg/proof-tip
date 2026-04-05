@@ -92,3 +92,5 @@
         ;; Record proof
         (map-set proof-ledger
             { proof-id: proof-id }
+            {
+                sender: tx-sender,
