@@ -158,3 +158,6 @@
         proofs-sent: (default-to u0 (map-get? user-tip-count user)),
         proofs-received: (default-to u0 (map-get? user-received-count user)),
         total-sent: (default-to u0 (map-get? user-total-sent user)),
+        total-received: (default-to u0 (map-get? user-total-received user))
+    }
+)
