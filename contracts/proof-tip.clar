@@ -151,3 +151,6 @@
 (define-read-only (get-proof (proof-id uint))
     (map-get? proof-ledger { proof-id: proof-id })
 )
+
+;; User stats
+(define-read-only (get-user-stats (user principal))
