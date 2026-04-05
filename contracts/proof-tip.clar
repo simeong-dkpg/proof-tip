@@ -149,3 +149,5 @@
 
 ;; Get a proof by ID
 (define-read-only (get-proof (proof-id uint))
+    (map-get? proof-ledger { proof-id: proof-id })
+)
