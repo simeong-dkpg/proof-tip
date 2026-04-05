@@ -114,3 +114,4 @@
 
         ;; Emit event
         (print {
+            event: "proof-tip",
