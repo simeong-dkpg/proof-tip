@@ -97,3 +97,6 @@
                 recipient: recipient,
                 amount: amount,
                 message: message,
+                tip-height: stacks-block-height
+            }
+        )
