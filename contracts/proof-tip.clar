@@ -67,3 +67,4 @@
     (let
         (
             (proof-id (var-get total-proofs))
+            (fee (calculate-fee amount))
