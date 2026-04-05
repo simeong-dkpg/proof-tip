@@ -120,3 +120,5 @@
             recipient: recipient,
             amount: amount,
             fee: fee,
+            message: message
+        })
