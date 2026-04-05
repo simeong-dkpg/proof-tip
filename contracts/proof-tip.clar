@@ -115,3 +115,4 @@
         ;; Emit event
         (print {
             event: "proof-tip",
+            proof-id: proof-id,
