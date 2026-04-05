@@ -64,3 +64,6 @@
 
 ;; submit-proof-tip
 (define-public (submit-proof-tip (recipient principal) (amount uint) (message (string-utf8 280)))
+    (let
+        (
+            (proof-id (var-get total-proofs))
