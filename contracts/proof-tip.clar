@@ -116,3 +116,4 @@
         (print {
             event: "proof-tip",
             proof-id: proof-id,
+            sender: tx-sender,
