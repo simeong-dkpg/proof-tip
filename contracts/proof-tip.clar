@@ -75,6 +75,7 @@
             (recipient-received (default-to u0 (map-get? user-total-received recipient)))
             (sender-count (default-to u0 (map-get? user-tip-count tx-sender)))
             (recipient-count (default-to u0 (map-get? user-received-count recipient)))
+        )
 
         ;; Validation
         (asserts! (> amount u0) err-invalid-amount)
@@ -190,3 +191,5 @@
 
 ;; Fee calculator
 (define-read-only (get-fee-for-amount (amount uint))
+    (ok (calculate-fee amount))
+)
