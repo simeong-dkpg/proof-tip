@@ -14,3 +14,9 @@
 (define-constant err-transfer-failed (err u103))
 (define-constant err-not-found (err u104))
 (define-constant err-insufficient-fees (err u105))
+
+;; ---------------------------------------------------------
+;; Fee Configuration
+;; ---------------------------------------------------------
+
+(define-constant fee-basis-points u50) ;; 0.5%
