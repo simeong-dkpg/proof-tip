@@ -175,3 +175,6 @@
     {
         total-proofs: (var-get total-proofs),
         total-volume: (var-get total-volume),
+        platform-fees: (var-get platform-fees)
+    }
+)
