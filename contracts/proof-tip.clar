@@ -111,3 +111,6 @@
         (var-set total-proofs (+ proof-id u1))
         (var-set total-volume (+ (var-get total-volume) amount))
         (var-set platform-fees (+ (var-get platform-fees) fee))
+
+        ;; Emit event
+        (print {
