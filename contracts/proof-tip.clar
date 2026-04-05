@@ -85,3 +85,4 @@
         (try! (stx-transfer? net-amount tx-sender recipient))
 
         (if is-owner
+            true
