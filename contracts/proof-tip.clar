@@ -135,3 +135,5 @@
         )
         (asserts! (is-eq tx-sender contract-owner) err-owner-only)
         (asserts! (>= current-fees amount) err-insufficient-fees)
+
+        (try! (stx-transfer? amount tx-sender contract-owner))
