@@ -138,3 +138,7 @@
 
         (try! (stx-transfer? amount tx-sender contract-owner))
         (var-set platform-fees (- current-fees amount))
+
+        (ok true)
+    )
+)
