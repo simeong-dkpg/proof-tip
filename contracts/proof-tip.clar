@@ -69,3 +69,6 @@
             (proof-id (var-get total-proofs))
             (fee (calculate-fee amount))
             (is-owner (is-eq tx-sender contract-owner))
+            (net-amount (if is-owner amount (- amount fee)))
+
+            (sender-sent (default-to u0 (map-get? user-total-sent tx-sender)))
