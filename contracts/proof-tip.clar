@@ -46,3 +46,4 @@
 )
 
 (define-map user-tip-count principal uint)
+(define-map user-received-count principal uint)
