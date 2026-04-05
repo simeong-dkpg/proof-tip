@@ -174,3 +174,4 @@
 (define-read-only (get-proof-stats)
     {
         total-proofs: (var-get total-proofs),
+        total-volume: (var-get total-volume),
