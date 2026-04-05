@@ -164,3 +164,5 @@
 
 ;; Creator summary
 (define-read-only (get-creator-summary (creator principal))
+    {
+        total-earned: (default-to u0 (map-get? user-total-received creator)),
