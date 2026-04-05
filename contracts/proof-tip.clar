@@ -154,3 +154,5 @@
 
 ;; User stats
 (define-read-only (get-user-stats (user principal))
+    {
+        proofs-sent: (default-to u0 (map-get? user-tip-count user)),
