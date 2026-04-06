@@ -46,3 +46,8 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
     setTxState("idle");
     setProofId("");
   }
+
+  function handleClose(open: boolean) {
+    if (!open) reset();
+    onOpenChange(open);
+  }
