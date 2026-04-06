@@ -75,3 +75,18 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
           <DialogTitle className="text-xl">Send a Tip</DialogTitle>
           <DialogDescription>Support a creator with STX on-chain.</DialogDescription>
         </DialogHeader>
+
+        {txState === "idle" && (
+          <div className="space-y-4 pt-2">
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground">Recipient</label>
+              <Input placeholder="username.btc or SP address" value={recipient} onChange={(e) => setRecipient(e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground">Amount (STX)</label>
+              <Input type="number" min="0" step="0.1" placeholder="0.00" value={amount} onChange={(e) => setAmount(e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground">Message <span className="text-muted-foreground">(optional)</span></label>
+              <Input placeholder="Say something nice…" value={message} onChange={(e) => setMessage(e.target.value)} />
+            </div>
