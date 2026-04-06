@@ -55,3 +55,15 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
   async function handleSend() {
     setTxState("pending");
     await new Promise((r) => setTimeout(r, 2000));
+
+    // 90% success rate for demo
+    if (Math.random() > 0.1) {
+      const id = `proof-${Date.now().toString(36)}`;
+      setProofId(id);
+      setTxState("success");
+      toast.success("Tip sent successfully!", { description: `${numAmount} STX → ${recipient}` });
+    } else {
+      setTxState("error");
+      toast.error("Transaction failed", { description: "Network error. Please try again." });
+    }
+  }
