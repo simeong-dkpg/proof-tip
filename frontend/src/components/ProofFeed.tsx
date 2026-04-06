@@ -5,3 +5,6 @@ import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp, ExternalLink, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+
+function ProofCard({ tip, index }: { tip: Tip; index: number }) {
+  const [expanded, setExpanded] = useState(false);
