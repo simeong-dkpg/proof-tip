@@ -71,3 +71,53 @@ export default function Navbar() {
             </Button>
           )}
         </div>
+
+        {/* Mobile toggle */}
+        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="border-t border-border bg-background px-4 pb-4 pt-2 md:hidden">
+          <div className="flex flex-col gap-3">
+            {navLinks.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setMobileOpen(false)}
+                className={`text-sm font-medium ${
+                  location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <button
+              onClick={toggle}
+              className="flex items-center gap-2 text-sm font-medium text-muted-foreground"
+            >
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {theme === "dark" ? "Light mode" : "Dark mode"}
+            </button>
+            {wallet ? (
+              <div className="flex items-center gap-2 pt-2">
+                <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground">
+                  {wallet.balance.toFixed(2)} STX
+                </span>
+                <Button variant="outline" size="sm" onClick={() => { disconnect(); setMobileOpen(false); }} className="gap-2">
+                  <LogOut className="h-3 w-3" /> Disconnect
+                </Button>
+              </div>
+            ) : (
+              <Button size="sm" onClick={() => { connect(); setMobileOpen(false); }} className="gap-2 w-fit">
+                <Wallet className="h-3.5 w-3.5" /> Connect Wallet
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}
