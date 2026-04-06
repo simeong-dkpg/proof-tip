@@ -111,3 +111,9 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
             {!wallet && (
               <p className="text-sm text-destructive">Connect your wallet to send a tip.</p>
             )}
+
+            <Button className="w-full gap-2" disabled={!canSend} onClick={handleSend}>
+              Send Proof <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
