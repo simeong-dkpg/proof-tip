@@ -17,3 +17,30 @@ export default function Navbar() {
     { to: "/dashboard", label: "Dashboard" },
     { to: "/leaderboard", label: "Leaderboard" },
   ];
+
+  return (
+    <nav className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-black">
+            PT
+          </span>
+          <span className="text-foreground">
+            Proof<span className="text-primary">Tip</span>
+          </span>
+        </Link>
+
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-6 md:flex">
+          {navLinks.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                location.pathname === l.to ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              {l.label}
+            </Link>
+          ))}
