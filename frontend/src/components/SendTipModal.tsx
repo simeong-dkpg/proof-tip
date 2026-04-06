@@ -51,3 +51,7 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
     if (!open) reset();
     onOpenChange(open);
   }
+
+  async function handleSend() {
+    setTxState("pending");
+    await new Promise((r) => setTimeout(r, 2000));
