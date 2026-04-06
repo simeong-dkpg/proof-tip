@@ -80,3 +80,14 @@ function ProofCard({ tip, index }: { tip: Tip; index: number }) {
           )}
         </div>
       )}
+
+      <div className="mt-2 flex justify-center">
+        {expanded ? (
+          <ChevronUp className="h-3.5 w-3.5 text-muted-foreground" />
+        ) : (
+          <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
+        )}
+      </div>
+    </button>
+  );
+}
