@@ -117,3 +117,10 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
             </Button>
           </div>
         )}
+
+        {txState === "pending" && (
+          <div className="flex flex-col items-center gap-4 py-10">
+            <Loader2 className="h-10 w-10 animate-spin text-primary" />
+            <p className="text-sm text-muted-foreground">Broadcasting transaction…</p>
+          </div>
+        )}
