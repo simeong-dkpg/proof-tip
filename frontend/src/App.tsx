@@ -13,3 +13,5 @@ import Profile from "./pages/Profile";
 import Leaderboard from "./pages/Leaderboard";
 import ProofReceipt from "./pages/ProofReceipt";
 import NotFound from "./pages/NotFound";
+
+const queryClient = new QueryClient();
