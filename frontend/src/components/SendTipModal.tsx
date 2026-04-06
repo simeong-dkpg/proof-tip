@@ -67,3 +67,11 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
       toast.error("Transaction failed", { description: "Network error. Please try again." });
     }
   }
+
+  return (
+    <Dialog open={open} onOpenChange={handleClose}>
+      <DialogContent className="max-w-md">
+        <DialogHeader>
+          <DialogTitle className="text-xl">Send a Tip</DialogTitle>
+          <DialogDescription>Support a creator with STX on-chain.</DialogDescription>
+        </DialogHeader>
