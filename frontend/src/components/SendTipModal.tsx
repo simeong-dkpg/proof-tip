@@ -171,3 +171,9 @@ interface Props {
   defaultAmount?: string;
   defaultMessage?: string;
 }
+
+export default function SendTipModal({ open, onOpenChange, defaultRecipient = "", defaultAmount = "", defaultMessage = "" }: Props) {
+  const { wallet } = useWallet();
+  const [recipient, setRecipient] = useState(defaultRecipient);
+  const [amount, setAmount] = useState(defaultAmount);
+  const [message, setMessage] = useState(defaultMessage);
