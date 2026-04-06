@@ -189,3 +189,7 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
   }, [open, defaultRecipient, defaultAmount, defaultMessage]);
   const [txState, setTxState] = useState<TxState>("idle");
   const [proofId, setProofId] = useState("");
+
+  const numAmount = parseFloat(amount) || 0;
+  const total = numAmount + NETWORK_FEE;
+  const canSend = recipient.trim() && numAmount > 0 && wallet && wallet.balance >= total;
