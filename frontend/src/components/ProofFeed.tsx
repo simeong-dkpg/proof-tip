@@ -107,3 +107,6 @@ export default function ProofFeed() {
       tip.message.toLowerCase().includes(q)
     );
   });
+
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
