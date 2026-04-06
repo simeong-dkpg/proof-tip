@@ -163,3 +163,11 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
 }
 
 type TxState = "idle" | "pending" | "success" | "error";
+
+interface Props {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  defaultRecipient?: string;
+  defaultAmount?: string;
+  defaultMessage?: string;
+}
