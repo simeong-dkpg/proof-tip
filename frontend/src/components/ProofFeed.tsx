@@ -14,7 +14,7 @@ function ProofCard({ tip, index }: { tip: Tip; index: number }) {
       onClick={() => setExpanded(!expanded)}
       className="w-full rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 animate-fade-in"
       style={{ animationDelay: `${index * 50}ms`, animationFillMode: "both" }}
-      >
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 text-sm">
@@ -37,8 +37,8 @@ function ProofCard({ tip, index }: { tip: Tip; index: number }) {
           {tip.message && (
             <p className="mt-1 text-sm text-muted-foreground truncate">{tip.message}</p>
           )}
-    ></button>
-    <div className="flex flex-col items-end gap-1 shrink-0">
+        </div>
+        <div className="flex flex-col items-end gap-1 shrink-0">
           <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-sm font-bold text-primary">
             {tip.amount} STX
           </span>
@@ -116,3 +116,43 @@ export default function ProofFeed() {
     setSearch(value);
     setVisibleCount(PAGE_SIZE);
   };
+
+  return (
+    <section className="space-y-3">
+      <div className="flex items-center justify-between gap-4">
+        <h2 className="text-lg font-semibold text-foreground">Proof Feed</h2>
+        <div className="relative w-full max-w-xs">
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            placeholder="Search by name or message…"
+            value={search}
+            onChange={(e) => handleSearch(e.target.value)}
+            className="pl-9"
+          />
+        </div>
+      </div>
+      <div className="space-y-2">
+        {filtered.length === 0 ? (
+          <p className="py-8 text-center text-sm text-muted-foreground">No tips match your search.</p>
+        ) : (
+          visible.map((tip, i) => <ProofCard key={tip.id} tip={tip} index={i} />)
+        )}
+      </div>
+      {hasMore && (
+        <div className="flex justify-center pt-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+            className="gap-2"
+          >
+            Load more
+            <span className="text-xs text-muted-foreground">
+              ({visible.length} of {filtered.length})
+            </span>
+          </Button>
+        </div>
+      )}
+    </section>
+  );
+}
