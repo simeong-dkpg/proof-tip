@@ -177,3 +177,15 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
   const [recipient, setRecipient] = useState(defaultRecipient);
   const [amount, setAmount] = useState(defaultAmount);
   const [message, setMessage] = useState(defaultMessage);
+
+  useEffect(() => {
+    if (open) {
+      setRecipient(defaultRecipient);
+      setAmount(defaultAmount);
+      setMessage(defaultMessage);
+      setTxState("idle");
+      setProofId("");
+    }
+  }, [open, defaultRecipient, defaultAmount, defaultMessage]);
+  const [txState, setTxState] = useState<TxState>("idle");
+  const [proofId, setProofId] = useState("");
