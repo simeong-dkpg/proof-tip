@@ -91,3 +91,5 @@ function ProofCard({ tip, index }: { tip: Tip; index: number }) {
     </button>
   );
 }
+
+const PAGE_SIZE = 6;
