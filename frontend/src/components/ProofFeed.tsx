@@ -38,3 +38,12 @@ function ProofCard({ tip, index }: { tip: Tip; index: number }) {
             <p className="mt-1 text-sm text-muted-foreground truncate">{tip.message}</p>
           )}
     ></button>
+    <div className="flex flex-col items-end gap-1 shrink-0">
+          <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-sm font-bold text-primary">
+            {tip.amount} STX
+          </span>
+          <span className="text-xs text-muted-foreground">
+            {formatDistanceToNow(tip.timestamp, { addSuffix: true })}
+          </span>
+        </div>
+      </div>
