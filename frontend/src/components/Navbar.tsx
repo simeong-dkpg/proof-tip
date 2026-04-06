@@ -52,3 +52,22 @@ export default function Navbar() {
           >
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
+
+          {wallet ? (
+            <div className="flex items-center gap-3">
+              <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground">
+                {wallet.balance.toFixed(2)} STX
+              </span>
+              <Button variant="outline" size="sm" onClick={disconnect} className="gap-2">
+                <Wallet className="h-3.5 w-3.5" />
+                {truncateAddress(wallet.address)}
+                <LogOut className="h-3 w-3 text-muted-foreground" />
+              </Button>
+            </div>
+          ) : (
+            <Button size="sm" onClick={connect} className="gap-2">
+              <Wallet className="h-3.5 w-3.5" />
+              Connect Wallet
+            </Button>
+          )}
+        </div>
