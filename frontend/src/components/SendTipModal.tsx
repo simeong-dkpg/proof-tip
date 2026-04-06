@@ -142,3 +142,22 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
             </Button>
           </div>
         )}
+
+        {txState === "error" && (
+          <div className="flex flex-col items-center gap-4 py-8 text-center">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-destructive/15">
+              <AlertCircle className="h-8 w-8 text-destructive" />
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-foreground">Transaction Failed</p>
+              <p className="text-sm text-muted-foreground mt-1">Network error. Please try again.</p>
+            </div>
+            <Button size="sm" onClick={() => setTxState("idle")}>
+              Retry
+            </Button>
+          </div>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
