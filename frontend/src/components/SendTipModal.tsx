@@ -38,3 +38,11 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
   const numAmount = parseFloat(amount) || 0;
   const total = numAmount + NETWORK_FEE;
   const canSend = recipient.trim() && numAmount > 0 && wallet && wallet.balance >= total;
+
+  function reset() {
+    setRecipient(defaultRecipient);
+    setAmount(defaultAmount);
+    setMessage(defaultMessage);
+    setTxState("idle");
+    setProofId("");
+  }
