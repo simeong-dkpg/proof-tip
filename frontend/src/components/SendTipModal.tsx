@@ -124,3 +124,21 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
             <p className="text-sm text-muted-foreground">Broadcasting transaction…</p>
           </div>
         )}
+
+        {txState === "success" && (
+          <div className="flex flex-col items-center gap-4 py-8 text-center">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-accent/15">
+              <CheckCircle2 className="h-8 w-8 text-accent" />
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-foreground">Tip Sent!</p>
+              <p className="text-sm text-muted-foreground mt-1">{numAmount} STX → {recipient}</p>
+            </div>
+            <div className="rounded-lg bg-muted px-4 py-2 text-xs font-mono text-muted-foreground">
+              Proof ID: {proofId}
+            </div>
+            <Button variant="outline" size="sm" onClick={() => handleClose(false)}>
+              Done
+            </Button>
+          </div>
+        )}
