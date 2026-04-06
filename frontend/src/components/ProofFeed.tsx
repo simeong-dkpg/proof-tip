@@ -97,3 +97,13 @@ const PAGE_SIZE = 6;
 export default function ProofFeed() {
   const [search, setSearch] = useState("");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  const filtered = mockTips.filter((tip) => {
+    if (!search) return true;
+    const q = search.toLowerCase();
+    return (
+      tip.sender.toLowerCase().includes(q) ||
+      tip.recipient.toLowerCase().includes(q) ||
+      tip.message.toLowerCase().includes(q)
+    );
+  });
