@@ -15,3 +15,34 @@ import ProofReceipt from "./pages/ProofReceipt";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ThemeProvider>
+          <WalletProvider>
+            <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-300">
+              <Navbar />
+              <main className="flex-1">
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/profile/:username" element={<Profile />} />
+                  <Route path="/leaderboard" element={<Leaderboard />} />
+                  <Route path="/proof/:id" element={<ProofReceipt />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </WalletProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;
