@@ -161,3 +161,5 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
     </Dialog>
   );
 }
+
+type TxState = "idle" | "pending" | "success" | "error";
