@@ -93,3 +93,7 @@ function ProofCard({ tip, index }: { tip: Tip; index: number }) {
 }
 
 const PAGE_SIZE = 6;
+
+export default function ProofFeed() {
+  const [search, setSearch] = useState("");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
