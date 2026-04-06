@@ -110,3 +110,9 @@ export default function ProofFeed() {
 
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
+
+  // Reset pagination when search changes
+  const handleSearch = (value: string) => {
+    setSearch(value);
+    setVisibleCount(PAGE_SIZE);
+  };
