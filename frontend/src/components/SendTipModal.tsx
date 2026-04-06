@@ -90,3 +90,20 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
               <label className="text-sm font-medium text-foreground">Message <span className="text-muted-foreground">(optional)</span></label>
               <Input placeholder="Say something nice…" value={message} onChange={(e) => setMessage(e.target.value)} />
             </div>
+
+            {numAmount > 0 && (
+              <div className="rounded-lg bg-muted p-3 text-sm space-y-1">
+                <div className="flex justify-between text-muted-foreground">
+                  <span>Tip amount</span>
+                  <span>{numAmount.toFixed(4)} STX</span>
+                </div>
+                <div className="flex justify-between text-muted-foreground">
+                  <span>Network fee</span>
+                  <span>{NETWORK_FEE} STX</span>
+                </div>
+                <div className="flex justify-between font-semibold text-foreground border-t border-border pt-1">
+                  <span>Total</span>
+                  <span>{total.toFixed(4)} STX</span>
+                </div>
+              </div>
+            )}
