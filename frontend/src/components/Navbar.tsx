@@ -11,3 +11,9 @@ export default function Navbar() {
   const { theme, toggle } = useTheme();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "/dashboard", label: "Dashboard" },
+    { to: "/leaderboard", label: "Leaderboard" },
+  ];
