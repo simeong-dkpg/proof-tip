@@ -107,3 +107,7 @@ export default function SendTipModal({ open, onOpenChange, defaultRecipient = ""
                 </div>
               </div>
             )}
+
+            {!wallet && (
+              <p className="text-sm text-destructive">Connect your wallet to send a tip.</p>
+            )}
