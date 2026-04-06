@@ -47,3 +47,36 @@ function ProofCard({ tip, index }: { tip: Tip; index: number }) {
           </span>
         </div>
       </div>
+
+      {expanded && (
+        <div className="mt-3 space-y-2 border-t border-border pt-3 text-xs text-muted-foreground animate-fade-in">
+          <div className="flex justify-between">
+            <span>Proof ID</span>
+            <span className="font-mono text-foreground">{tip.id}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>From</span>
+            <span className="font-mono text-foreground">{truncateAddress(tip.senderAddress)}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>To</span>
+            <span className="font-mono text-foreground">{truncateAddress(tip.recipientAddress)}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>Tx Hash</span>
+            <Link
+              to={`/proof/${tip.id}`}
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1 font-mono text-primary hover:underline"
+            >
+              {tip.txHash} <ExternalLink className="h-3 w-3" />
+            </Link>
+          </div>
+          {tip.message && (
+            <div className="pt-1">
+              <span className="block mb-1">Message</span>
+              <p className="text-foreground">{tip.message}</p>
+            </div>
+          )}
+        </div>
+      )}
