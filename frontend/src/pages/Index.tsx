@@ -68,3 +68,8 @@ export default function Index() {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
+          <Input
+            placeholder="Message (optional)"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
