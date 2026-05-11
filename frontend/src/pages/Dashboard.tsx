@@ -47,3 +47,10 @@ export default function Dashboard() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 animate-enter">
       <h1 className="text-2xl font-bold text-foreground mb-6">Creator Dashboard</h1>
+      {/* Stats */}
+      <div className="grid gap-4 sm:grid-cols-3 mb-8">
+        <Card>
+          <CardContent className="flex items-center gap-4 p-5">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/15">
+              <TrendingUp className="h-5 w-5 text-accent" />
+            </div>
