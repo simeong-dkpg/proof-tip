@@ -114,3 +114,9 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       )}
+
+      {chartData.length > 0 && (
+        <Card className="mb-8">
+          <CardContent className="p-5">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Your Tips Over Time</h2>
+            <div className="h-52">
