@@ -26,3 +26,7 @@ export default function Dashboard() {
       const day = format(t.timestamp, "MMM d");
       byDay[day] = (byDay[day] || 0) + t.amount;
     });
+    return Object.entries(byDay)
+      .map(([day, amount]) => ({ day, amount }))
+      .reverse();
+  }, [received]);
