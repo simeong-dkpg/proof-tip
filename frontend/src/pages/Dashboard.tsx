@@ -132,3 +132,12 @@ export default function Dashboard() {
                       borderRadius: "8px",
                       fontSize: "12px",
                     }}
+                    formatter={(value: number) => [`${value} STX`, "Amount"]}
+                  />
+                  <Bar dataKey="amount" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </CardContent>
+        </Card>
+      )}
