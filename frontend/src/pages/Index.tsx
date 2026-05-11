@@ -30,3 +30,18 @@ export default function Index() {
     }
     setModalOpen(true);
   }
+
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-10 animate-enter">
+      {/* Hero */}
+      <section className="mb-12 text-center">
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary mb-4">
+          <Zap className="h-3 w-3" /> On-chain micro-tipping
+        </div>
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+          Support creators<br />
+          <span className="text-primary">with proof.</span>
+        </h1>
+        <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
+          Send STX tips directly to creators. Every tip is a verifiable on-chain proof of support — transparent, instant, and permanent.
+        </p>
