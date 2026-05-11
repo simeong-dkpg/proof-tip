@@ -15,3 +15,10 @@ export default function Index() {
   const [recipient, setRecipient] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
+
+  const networkStats = useMemo(() => {
+    const totalSTX = mockTips.reduce((s, t) => s + t.amount, 0);
+    const totalTips = mockTips.length;
+    const creators = new Set([...mockTips.map((t) => t.sender), ...mockTips.map((t) => t.recipient)]).size;
+    return { totalSTX, totalTips, creators };
+  }, []);
