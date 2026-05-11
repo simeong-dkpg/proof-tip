@@ -12,3 +12,6 @@ import { useNavigate } from "react-router-dom";
 export default function Dashboard() {
   const { wallet, connect } = useWallet();
   const navigate = useNavigate();
+
+  // Use alice.btc as dashboard user (matches mock wallet)
+  const dashUser = "alice.btc";
