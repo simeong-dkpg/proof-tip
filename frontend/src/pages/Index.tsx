@@ -78,3 +78,21 @@ export default function Index() {
           </Button>
         </div>
       </section>
+
+      {/* Tip of the Day */}
+      <TipOfTheDay />
+
+      {/* Proof Feed */}
+      <ProofFeed />
+
+      {/* Send Tip Modal */}
+      <SendTipModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        defaultRecipient={recipient}
+        defaultAmount={amount}
+        defaultMessage={message}
+      />
+    </div>
+  );
+}
