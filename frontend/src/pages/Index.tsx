@@ -45,3 +45,15 @@ export default function Index() {
         <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
           Send STX tips directly to creators. Every tip is a verifiable on-chain proof of support — transparent, instant, and permanent.
         </p>
+
+        {/* Network Stats */}
+        <StatsGrid stats={networkStats} />
+      </section>
+      <section className="mb-14 rounded-2xl border border-border bg-card p-6 shadow-sm">
+        <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Quick Tip</h2>
+        <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr_1fr_auto]">
+          <Input
+            placeholder="Recipient (e.g. bob.btc)"
+            value={recipient}
+            onChange={(e) => setRecipient(e.target.value)}
+          />
