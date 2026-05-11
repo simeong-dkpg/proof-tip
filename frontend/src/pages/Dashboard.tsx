@@ -19,3 +19,10 @@ export default function Dashboard() {
   const received = useMemo(() => mockTips.filter((t) => t.recipient === dashUser), []);
   const totalEarned = useMemo(() => received.reduce((s, t) => s + t.amount, 0), [received]);
   const uniqueSupporters = useMemo(() => new Set(received.map((t) => t.sender)).size, [received]);
+
+  const chartData = useMemo(() => {
+    const byDay: Record<string, number> = {};
+    received.forEach((t) => {
+      const day = format(t.timestamp, "MMM d");
+      byDay[day] = (byDay[day] || 0) + t.amount;
+    });
