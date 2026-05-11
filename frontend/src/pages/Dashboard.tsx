@@ -141,3 +141,9 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       )}
+
+      {/* Tip History Table */}
+      <Card>
+        <CardContent className="p-5">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Tip History</h2>
+          <Table></Table>
