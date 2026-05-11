@@ -109,3 +109,8 @@ function StatsGrid({ stats }: { stats: { totalSTX: number; totalTips: number; cr
         <p className="text-xl font-bold text-foreground"><span ref={stx.ref}>{stx.display}</span></p>
         <p className="text-xs text-muted-foreground">STX Transacted</p>
       </div>
+      <div className="rounded-xl border border-border bg-card p-4">
+        <Hash className="mx-auto mb-1.5 h-5 w-5 text-primary" />
+        <p className="text-xl font-bold text-foreground"><span ref={tips.ref}>{tips.display}</span></p>
+        <p className="text-xs text-muted-foreground">Total Tips</p>
+      </div>
