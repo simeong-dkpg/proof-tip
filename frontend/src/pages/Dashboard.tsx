@@ -120,3 +120,8 @@ export default function Dashboard() {
           <CardContent className="p-5">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Your Tips Over Time</h2>
             <div className="h-52">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="day" tick={{ fontSize: 12, fill: "hsl(var(--muted-foreground))" }} />
+                  <YAxis tick={{ fontSize: 12, fill: "hsl(var(--muted-foreground))" }} />
