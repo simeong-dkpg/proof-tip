@@ -146,4 +146,12 @@ export default function Dashboard() {
       <Card>
         <CardContent className="p-5">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Tip History</h2>
-          <Table></Table>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Date</TableHead>
+                <TableHead>From</TableHead>
+                <TableHead>Amount</TableHead>
+                <TableHead className="hidden sm:table-cell">Message</TableHead>
+              </TableRow>
+            </TableHeader>
