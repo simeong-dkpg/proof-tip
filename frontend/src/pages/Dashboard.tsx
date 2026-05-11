@@ -15,3 +15,7 @@ export default function Dashboard() {
 
   // Use alice.btc as dashboard user (matches mock wallet)
   const dashUser = "alice.btc";
+
+  const received = useMemo(() => mockTips.filter((t) => t.recipient === dashUser), []);
+  const totalEarned = useMemo(() => received.reduce((s, t) => s + t.amount, 0), [received]);
+  const uniqueSupporters = useMemo(() => new Set(received.map((t) => t.sender)).size, [received]);
