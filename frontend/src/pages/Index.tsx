@@ -101,3 +101,11 @@ function StatsGrid({ stats }: { stats: { totalSTX: number; totalTips: number; cr
   const stx = useCountUp(stats.totalSTX, 1200, 1);
   const tips = useCountUp(stats.totalTips, 1000, 0);
   const creators = useCountUp(stats.creators, 800, 0);
+  
+  return (
+    <div className="mx-auto mt-8 grid max-w-lg grid-cols-3 gap-4">
+      <div className="rounded-xl border border-border bg-card p-4">
+        <TrendingUp className="mx-auto mb-1.5 h-5 w-5 text-accent" />
+        <p className="text-xl font-bold text-foreground"><span ref={stx.ref}>{stx.display}</span></p>
+        <p className="text-xs text-muted-foreground">STX Transacted</p>
+      </div>
