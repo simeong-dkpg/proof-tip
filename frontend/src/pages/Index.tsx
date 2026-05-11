@@ -22,3 +22,11 @@ export default function Index() {
     const creators = new Set([...mockTips.map((t) => t.sender), ...mockTips.map((t) => t.recipient)]).size;
     return { totalSTX, totalTips, creators };
   }, []);
+
+  function handleQuickTip() {
+    if (!wallet) {
+      connect();
+      return;
+    }
+    setModalOpen(true);
+  }
