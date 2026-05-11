@@ -8,3 +8,7 @@ import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContai
 import { format } from "date-fns";
 import { Wallet, TrendingUp, Users, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
+export default function Dashboard() {
+  const { wallet, connect } = useWallet();
+  const navigate = useNavigate();
