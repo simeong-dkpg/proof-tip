@@ -58,3 +58,10 @@ export default function Dashboard() {
               <p className="text-sm text-muted-foreground">Total Earned</p>
               <p className="text-2xl font-bold text-foreground">{totalEarned.toFixed(2)} <span className="text-sm font-normal text-muted-foreground">STX</span></p>
             </div>
+            </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="flex items-center gap-4 p-5">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15">
+              <Users className="h-5 w-5 text-primary" />
+            </div>
