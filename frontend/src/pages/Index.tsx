@@ -73,3 +73,8 @@ export default function Index() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
+          <Button className="gap-2 whitespace-nowrap" onClick={handleQuickTip}>
+            Send Proof <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
+      </section>
