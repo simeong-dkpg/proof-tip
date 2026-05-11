@@ -43,3 +43,7 @@ export default function Dashboard() {
       </div>
     );
   }
+
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-10 animate-enter">
+      <h1 className="text-2xl font-bold text-foreground mb-6">Creator Dashboard</h1>
