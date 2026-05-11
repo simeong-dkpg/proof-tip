@@ -96,3 +96,8 @@ export default function Index() {
     </div>
   );
 }
+
+function StatsGrid({ stats }: { stats: { totalSTX: number; totalTips: number; creators: number } }) {
+  const stx = useCountUp(stats.totalSTX, 1200, 1);
+  const tips = useCountUp(stats.totalTips, 1000, 0);
+  const creators = useCountUp(stats.creators, 800, 0);
