@@ -71,3 +71,9 @@ export default function Dashboard() {
             </div>
           </CardContent>
         </Card>
+        {/* Network Volume Chart */}
+      {networkVolumeData.length > 0 && (
+        <Card className="mb-8">
+          <CardContent className="p-5">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Network Tip Volume</h2>
+            <div className="h-56"></div>
