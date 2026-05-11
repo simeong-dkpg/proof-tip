@@ -31,6 +31,20 @@ export default function Dashboard() {
       .reverse();
   }, [received]);
 
+  const networkVolumeData = useMemo(() => {
+    const byDay: Record<string, { stx: number; count: number }> = {};
+    mockTips.forEach((t) => {
+      const day = format(t.timestamp, "MMM d");
+      const entry = byDay[day] ?? { stx: 0, count: 0 };
+      entry.stx += t.amount;
+      entry.count += 1;
+      byDay[day] = entry;
+    });
+    return Object.entries(byDay)
+      .map(([day, d]) => ({ day, stx: d.stx, tips: d.count }))
+      .reverse();
+  }, []);
+
   if (!wallet) {
     return (
       <div className="mx-auto max-w-5xl px-4 py-20 text-center animate-enter">
@@ -47,6 +61,7 @@ export default function Dashboard() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 animate-enter">
       <h1 className="text-2xl font-bold text-foreground mb-6">Creator Dashboard</h1>
+
       {/* Stats */}
       <div className="grid gap-4 sm:grid-cols-3 mb-8">
         <Card>
@@ -58,7 +73,7 @@ export default function Dashboard() {
               <p className="text-sm text-muted-foreground">Total Earned</p>
               <p className="text-2xl font-bold text-foreground">{totalEarned.toFixed(2)} <span className="text-sm font-normal text-muted-foreground">STX</span></p>
             </div>
-            </CardContent>
+          </CardContent>
         </Card>
         <Card>
           <CardContent className="flex items-center gap-4 p-5">
@@ -71,15 +86,28 @@ export default function Dashboard() {
             </div>
           </CardContent>
         </Card>
-        {/* Network Volume Chart */}
+        <Card>
+          <CardContent className="flex items-center gap-4 p-5">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15">
+              <Zap className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground">Total Tips</p>
+              <p className="text-2xl font-bold text-foreground">{received.length}</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Network Volume Chart */}
       {networkVolumeData.length > 0 && (
         <Card className="mb-8">
           <CardContent className="p-5">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Network Tip Volume</h2>
             <div className="h-56">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={networkVolumeData}></AreaChart>
-                <defs>
+                <AreaChart data={networkVolumeData}>
+                  <defs>
                     <linearGradient id="volumeGradient" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
                       <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity={0} />
@@ -109,11 +137,12 @@ export default function Dashboard() {
                     fill="url(#volumeGradient)"
                   />
                 </AreaChart>
-                </ResponsiveContainer>
+              </ResponsiveContainer>
             </div>
           </CardContent>
         </Card>
       )}
+
 
       {chartData.length > 0 && (
         <Card className="mb-8">
@@ -155,3 +184,19 @@ export default function Dashboard() {
                 <TableHead className="hidden sm:table-cell">Message</TableHead>
               </TableRow>
             </TableHeader>
+            <TableBody>
+              {received.map((tip) => (
+                <TableRow key={tip.id}>
+                  <TableCell className="text-sm">{format(tip.timestamp, "MMM d, HH:mm")}</TableCell>
+                  <TableCell className="font-medium text-sm">{tip.sender}</TableCell>
+                  <TableCell className="font-semibold text-primary text-sm">{tip.amount} STX</TableCell>
+                  <TableCell className="text-muted-foreground text-sm hidden sm:table-cell truncate max-w-[200px]">{tip.message}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
