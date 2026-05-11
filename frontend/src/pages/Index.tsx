@@ -57,3 +57,14 @@ export default function Index() {
             value={recipient}
             onChange={(e) => setRecipient(e.target.value)}
           />
+          <span className="hidden items-center text-muted-foreground sm:flex">
+            <ArrowRight className="h-4 w-4" />
+          </span>
+          <Input
+            type="number"
+            min="0"
+            step="0.1"
+            placeholder="STX amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
