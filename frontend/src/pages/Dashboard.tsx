@@ -101,3 +101,11 @@ export default function Dashboard() {
                       name === "stx" ? "Volume" : "Tips",
                     ]}
                   />
+                  <Area
+                    type="monotone"
+                    dataKey="stx"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth={2}
+                    fill="url(#volumeGradient)"
+                  />
+                </AreaChart>
