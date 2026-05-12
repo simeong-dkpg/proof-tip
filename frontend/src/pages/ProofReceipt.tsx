@@ -31,3 +31,10 @@ export default function ProofReceipt() {
       <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6">
         <ArrowLeft className="h-4 w-4" /> Back to Feed
       </Link>
+
+      <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+        {/* Status */}
+        <div className="flex items-center gap-2 mb-6">
+          <CheckCircle2 className="h-5 w-5 text-accent" />
+          <span className="text-sm font-semibold text-accent">Confirmed On-Chain</span>
+        </div>
