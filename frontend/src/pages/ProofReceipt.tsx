@@ -69,3 +69,28 @@ export default function ProofReceipt() {
             <p className="text-foreground">{tip.message}</p>
           </div>
         )}
+
+        {/* Details */}
+        <div className="space-y-3 text-sm">
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Proof ID</span>
+            <span className="font-mono text-foreground">{tip.id}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-muted-foreground">Tx Hash</span>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-foreground">{tip.txHash}</span>
+              <button onClick={copyTx} className="text-muted-foreground hover:text-foreground">
+                <Copy className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Network Fee</span>
+            <span className="text-foreground">0.001 STX</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-muted-foreground">Block</span>
+            <span className="text-foreground">#{Math.floor(Math.random() * 50000 + 150000)}</span>
+          </div>
+        </div>
