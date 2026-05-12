@@ -8,3 +8,15 @@ import { toast } from "sonner";
 export default function ProofReceipt() {
   const { id } = useParams<{ id: string }>();
   const tip = mockTips.find((t) => t.id === id);
+
+  if (!tip) {
+    return (
+      <div className="mx-auto max-w-2xl px-4 py-20 text-center animate-enter">
+        <h1 className="text-2xl font-bold text-foreground mb-2">Proof not found</h1>
+        <p className="text-muted-foreground mb-6">This transaction ID doesn't exist.</p>
+        <Link to="/">
+          <Button variant="outline"><ArrowLeft className="mr-2 h-4 w-4" /> Back Home</Button>
+        </Link>
+      </div>
+    );
+  }
