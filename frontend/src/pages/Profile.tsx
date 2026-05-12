@@ -33,3 +33,5 @@ export default function Profile() {
       </div>
     );
   }
+
+  const initials = username.replace(".btc", "").slice(0, 2).toUpperCase();
