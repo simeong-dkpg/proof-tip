@@ -65,3 +65,12 @@ export default function Profile() {
             <p className="text-xs text-muted-foreground">Total Received</p>
           </div>
         </Card>
+        <Card className="flex items-center gap-3 p-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+            <Heart className="h-5 w-5 text-primary" />
+          </div>
+          <div>
+            <p className="text-2xl font-bold text-foreground">{stats.tipCount}</p>
+            <p className="text-xs text-muted-foreground">Tips Received</p>
+          </div>
+        </Card>
