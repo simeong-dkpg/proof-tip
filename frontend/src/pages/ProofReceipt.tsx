@@ -44,3 +44,20 @@ export default function ProofReceipt() {
           <p className="text-4xl font-extrabold text-foreground">{tip.amount.toFixed(1)} STX</p>
           <p className="text-sm text-muted-foreground mt-1">{format(tip.timestamp, "PPpp")}</p>
         </div>
+
+        {/* Sender → Recipient */}
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="text-center">
+            <Link to={`/profile/${tip.sender}`} className="text-sm font-semibold text-primary hover:underline">
+              {tip.sender}
+            </Link>
+            <p className="text-xs text-muted-foreground">{truncateAddress(tip.senderAddress)}</p>
+          </div>
+          <ArrowRight className="h-5 w-5 text-muted-foreground" />
+          <div className="text-center">
+            <Link to={`/profile/${tip.recipient}`} className="text-sm font-semibold text-primary hover:underline">
+              {tip.recipient}
+            </Link>
+            <p className="text-xs text-muted-foreground">{truncateAddress(tip.recipientAddress)}</p>
+          </div>
+        </div>
