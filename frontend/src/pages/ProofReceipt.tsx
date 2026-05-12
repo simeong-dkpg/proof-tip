@@ -105,3 +105,23 @@ export default function ProofReceipt() {
           >
             View on Explorer <ExternalLink className="h-3.5 w-3.5" />
           </a>
+          <span className="text-border">|</span>
+          <button
+            onClick={() => {
+              const text = `I just tipped ${tip.recipient} ${tip.amount} STX on ProofTip! 🧾⚡\n\nMessage: "${tip.message}"\n\nVerify on-chain: ${window.location.href}`;
+              if (navigator.share) {
+                navigator.share({ title: "ProofTip Receipt", text, url: window.location.href });
+              } else {
+                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                window.open(twitterUrl, "_blank");
+              }
+            }}
+            className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+          >
+            Share <Share2 className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
