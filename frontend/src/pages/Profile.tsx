@@ -10,3 +10,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, Heart, Users, Coins } from "lucide-react";
 import { format } from "date-fns";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+
+export default function Profile() {
+  const { username } = useParams<{ username: string }>();
+  const [modalOpen, setModalOpen] = useState(false);
