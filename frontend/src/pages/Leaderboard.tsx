@@ -62,3 +62,19 @@ export default function Leaderboard() {
           <p className="text-sm text-muted-foreground">Top creators and supporters in the network</p>
         </div>
       </div>
+
+      <Tabs defaultValue="earners">
+        <TabsList className="mb-4">
+          <TabsTrigger value="earners">Top Earners</TabsTrigger>
+          <TabsTrigger value="tippers">Top Tippers</TabsTrigger>
+        </TabsList>
+        <TabsContent value="earners">
+          <LeaderboardTable type="earners" />
+        </TabsContent>
+        <TabsContent value="tippers">
+          <LeaderboardTable type="tippers" />
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
