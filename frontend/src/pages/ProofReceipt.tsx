@@ -20,3 +20,8 @@ export default function ProofReceipt() {
       </div>
     );
   }
+
+  function copyTx() {
+    navigator.clipboard.writeText(tip!.txHash);
+    toast.success("Transaction hash copied!");
+  }
