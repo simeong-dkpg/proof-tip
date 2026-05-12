@@ -16,3 +16,6 @@ export default function Profile() {
   const [modalOpen, setModalOpen] = useState(false);
 
   if (!username) return null;
+
+  const stats = getCreatorStats(username);
+  const badges = getUserBadges(username);
