@@ -25,3 +25,9 @@ export default function ProofReceipt() {
     navigator.clipboard.writeText(tip!.txHash);
     toast.success("Transaction hash copied!");
   }
+
+  return (
+    <div className="mx-auto max-w-2xl px-4 py-10 animate-enter">
+      <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6">
+        <ArrowLeft className="h-4 w-4" /> Back to Feed
+      </Link>
