@@ -35,3 +35,21 @@ export default function Profile() {
   }
 
   const initials = username.replace(".btc", "").slice(0, 2).toUpperCase();
+
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-10 animate-enter">
+      {/* Header */}
+      <div className="mb-8 flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-6">
+        <Avatar className="h-16 w-16 text-xl">
+          <AvatarFallback className="bg-primary/10 text-primary font-bold">{initials}</AvatarFallback>
+        </Avatar>
+        <div className="flex-1 text-center sm:text-left">
+          <h1 className="text-2xl font-bold text-foreground">{username}</h1>
+          {stats.address && (
+            <p className="text-sm text-muted-foreground font-mono">{truncateAddress(stats.address)}</p>
+          )}
+        </div>
+        <Button className="gap-2" onClick={() => setModalOpen(true)}>
+          Send Tip <ArrowRight className="h-4 w-4" />
+        </Button>
+      </div>
