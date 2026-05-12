@@ -53,3 +53,15 @@ export default function Profile() {
           Send Tip <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
+
+      {/* Stats */}
+      <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <Card className="flex items-center gap-3 p-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+            <Coins className="h-5 w-5 text-primary" />
+          </div>
+          <div>
+            <p className="text-2xl font-bold text-foreground">{stats.totalReceived.toFixed(1)} STX</p>
+            <p className="text-xs text-muted-foreground">Total Received</p>
+          </div>
+        </Card>
