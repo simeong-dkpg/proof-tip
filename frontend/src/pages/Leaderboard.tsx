@@ -10,3 +10,6 @@ function MedalIcon({ rank }: { rank: number }) {
   if (rank === 3) return <Award className="h-4 w-4 text-primary" />;
   return <span className="text-sm text-muted-foreground w-4 text-center">{rank}</span>;
 }
+
+function LeaderboardTable({ type }: { type: "earners" | "tippers" }) {
+  const data = getLeaderboard(type);
