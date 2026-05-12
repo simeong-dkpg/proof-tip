@@ -94,3 +94,14 @@ export default function ProofReceipt() {
             <span className="text-foreground">#{Math.floor(Math.random() * 50000 + 150000)}</span>
           </div>
         </div>
+
+        {/* Actions */}
+        <div className="mt-6 pt-4 border-t border-border flex items-center justify-center gap-4">
+          <a
+            href={`https://explorer.stacks.co/txid/${tip.txHash}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+          >
+            View on Explorer <ExternalLink className="h-3.5 w-3.5" />
+          </a>
