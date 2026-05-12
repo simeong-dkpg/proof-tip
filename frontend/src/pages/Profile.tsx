@@ -139,3 +139,14 @@ export default function Profile() {
           </TableBody>
         </Table>
       </div>
+
+      <SendTipModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        defaultRecipient={username}
+        defaultAmount=""
+        defaultMessage=""
+      />
+    </div>
+  );
+}
