@@ -38,3 +38,9 @@ export default function ProofReceipt() {
           <CheckCircle2 className="h-5 w-5 text-accent" />
           <span className="text-sm font-semibold text-accent">Confirmed On-Chain</span>
         </div>
+
+        {/* Amount */}
+        <div className="text-center mb-8">
+          <p className="text-4xl font-extrabold text-foreground">{tip.amount.toFixed(1)} STX</p>
+          <p className="text-sm text-muted-foreground mt-1">{format(tip.timestamp, "PPpp")}</p>
+        </div>
