@@ -14,3 +14,5 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 export default function Profile() {
   const { username } = useParams<{ username: string }>();
   const [modalOpen, setModalOpen] = useState(false);
+
+  if (!username) return null;
