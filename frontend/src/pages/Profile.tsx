@@ -84,3 +84,26 @@ export default function Profile() {
           </div>
         </Card>
       </div>
+
+      {/* Badges */}
+      {badges.length > 0 && (
+        <div className="mb-8">
+          <h2 className="mb-3 text-lg font-semibold text-foreground">Achievements</h2>
+          <div className="flex flex-wrap gap-3">
+            {badges.map((badge) => {
+              const Icon = badge.icon;
+              return (
+                <Tooltip key={badge.id}>
+                  <TooltipTrigger asChild>
+                    <div className="flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm transition-all hover:border-primary/30 hover:shadow-sm animate-fade-in">
+                      <Icon className={`h-4 w-4 ${badge.color}`} />
+                      <span className="font-medium text-foreground">{badge.label}</span>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>{badge.description}</TooltipContent>
+                </Tooltip>
+              );
+            })}
+          </div>
+        </div>
+      )}
