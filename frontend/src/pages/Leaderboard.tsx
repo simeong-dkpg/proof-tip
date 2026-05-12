@@ -49,3 +49,16 @@ function LeaderboardTable({ type }: { type: "earners" | "tippers" }) {
     </div>
   );
 }
+
+export default function Leaderboard() {
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-10 animate-enter">
+      <div className="mb-8 flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+          <TrendingUp className="h-5 w-5 text-primary" />
+        </div>
+        <div>
+          <h1 className="text-2xl font-bold text-foreground">Leaderboard</h1>
+          <p className="text-sm text-muted-foreground">Top creators and supporters in the network</p>
+        </div>
+      </div>
