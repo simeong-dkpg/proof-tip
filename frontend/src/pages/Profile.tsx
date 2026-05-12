@@ -107,3 +107,35 @@ export default function Profile() {
           </div>
         </div>
       )}
+
+      <h2 className="mb-3 text-lg font-semibold text-foreground">Tip History</h2>
+      <div className="rounded-xl border border-border bg-card">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Date</TableHead>
+              <TableHead>From</TableHead>
+              <TableHead className="text-right">Amount</TableHead>
+              <TableHead className="hidden sm:table-cell">Message</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {stats.received.map((tip: Tip) => (
+              <TableRow key={tip.id}>
+                <TableCell className="text-muted-foreground text-sm">
+                  {format(tip.timestamp, "MMM d, yyyy")}
+                </TableCell>
+                <TableCell>
+                  <Link to={`/profile/${tip.sender}`} className="font-medium text-primary hover:underline">
+                    {tip.sender}
+                  </Link>
+                </TableCell>
+                <TableCell className="text-right font-semibold text-foreground">{tip.amount} STX</TableCell>
+                <TableCell className="hidden sm:table-cell text-sm text-muted-foreground truncate max-w-[200px]">
+                  {tip.message || "—"}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
