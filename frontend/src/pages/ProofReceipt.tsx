@@ -61,3 +61,11 @@ export default function ProofReceipt() {
             <p className="text-xs text-muted-foreground">{truncateAddress(tip.recipientAddress)}</p>
           </div>
         </div>
+
+        {/* Message */}
+        {tip.message && (
+          <div className="rounded-xl bg-muted/50 p-4 mb-6">
+            <p className="text-sm text-muted-foreground mb-1">Message</p>
+            <p className="text-foreground">{tip.message}</p>
+          </div>
+        )}
